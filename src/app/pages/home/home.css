@@ -1,12 +1,21 @@
 #Pruev .texT1 .Titulo1{
-    padding: 15px;
+    padding: 25px;
+    width: 728px;        /* ancho del contenedor */
+    height: 110px;       /* alto del contenedor */
     background-color: gray;
     text-align: center;
+    font-weight: bold;
+    letter-spacing: 2px;   /* Espacio entre letras */
+    line-height: 1.5;      /* Altura entre líneas */
+    font-size: 39px;       /* píxeles */
+    position: absolute; 
+    top:5px;
+    left: -40px;
 
 }
 #Pruev .texT1{
-    width: 300px;        /* ancho del contenedor */
-    height: 150px;       /* alto del contenedor */
+    width: 714px;        /* ancho del contenedor */
+    height: 123px;       /* alto del contenedor */
     background-color: #f2f2f2;
     border: 2px solid #888;
     
@@ -16,11 +25,11 @@
     align-items: center; /* centra verticalmente */
     justify-content: center; /* centra horizontalmente */
     position: absolute;
-    top:300px;
-    left: 600px;
+    top:516.6px;
+    left: 887px;
 }
 #Pruev .img-pruev{
-    background-color: red;
+    background-color: rgb(172, 142, 113);
     height: 600px;
 
 }
@@ -33,6 +42,7 @@
     width: 1500px;       /* ancho */
     
 }
+
 .Categorias{
     display: flex;
     flex-wrap: wrap;

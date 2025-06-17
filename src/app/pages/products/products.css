@@ -7,5 +7,49 @@
 .producto{
     border: 1px solid #ccc;
     padding: 20px;
-    width: 25%;
+    width: 33.3%;
+}
+#Pruev .texT1 .Titulo1{
+    padding: 25px;
+    width: 728px;        /* ancho del contenedor */
+    height: 110px;       /* alto del contenedor */
+    background-color: gray;
+    text-align: center;
+    font-weight: bold;
+    letter-spacing: 2px;   /* Espacio entre letras */
+    line-height: 1.5;      /* Altura entre líneas */
+    font-size: 47px;       /* píxeles */
+    position: absolute; 
+    top:5px;
+    left: -40px;
+
+}
+#Pruev .texT1{
+    width: 714px;        /* ancho del contenedor */
+    height: 123px;       /* alto del contenedor */
+    background-color: #f2f2f2;
+    border: 2px solid #888;
+    
+    padding: 15px;       /* espacio interno */
+    text-align: center;  /* alinea el texto al centro horizontal */
+    display: wrap;       
+    align-items: center; /* centra verticalmente */
+    justify-content: center; /* centra horizontalmente */
+    position: absolute;
+    top:516.6px;
+    left: 887px;
+}
+#Pruev .img-pruev{
+    background-color: rgb(172, 142, 113);
+    height: 600px;
+
+}
+#Pruev .img-pruev .position{
+    
+    position: relative;  /* o absolute, según el caso */
+    top: 20px;           /* mueve hacia abajo */
+    left: 100px;         /* mueve hacia la derecha */
+    height: 560px;       /* Altura */
+    width: 1500px;       /* ancho */
+    
 }
