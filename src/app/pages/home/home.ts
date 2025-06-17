@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { categori, Category } from '../../services/category';
+
 
 @Component({
   selector: 'app-home',
@@ -7,5 +9,8 @@ import { Component } from '@angular/core';
   styleUrl: './home.css'
 })
 export class Home {
-
+  Categorias : categori[]=[];
+  constructor(private categoria:Category){
+  this.Categorias=this.categoria.getCategorys();
+  }
 }

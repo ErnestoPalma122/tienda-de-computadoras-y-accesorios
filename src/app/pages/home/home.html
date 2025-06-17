@@ -1,2 +1,20 @@
-<h1>Encontraras computadoras accesorios y mas</h1>
-<img src="/img/1.jpg" alt="photo">
+
+<Section id="Pruev">
+    
+    <div class="img-pruev">
+        <img src="/img/1.jpg" alt="photo" class="position">
+    </div>
+    <div class="texT1">
+        <h1 class="Titulo1">Encontraras computadoras accesorios y mas</h1>
+    </div>
+    
+</Section>
+<section class="Categorias">
+    @for (Categorias of Categorias; track Categorias.id) {
+        <article class="categoria">
+            <img [src]="Categorias.imagen" [alt]="Categorias.categoria">
+            <h3>{{Categorias.categoria}}</h3>
+        </article>
+    }
+</section>
+

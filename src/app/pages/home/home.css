@@ -1,6 +1,44 @@
-h1{
+#Pruev .texT1 .Titulo1{
     padding: 15px;
     background-color: gray;
     text-align: center;
 
+}
+#Pruev .texT1{
+    width: 300px;        /* ancho del contenedor */
+    height: 150px;       /* alto del contenedor */
+    background-color: #f2f2f2;
+    border: 2px solid #888;
+    
+    padding: 15px;       /* espacio interno */
+    text-align: center;  /* alinea el texto al centro horizontal */
+    display: wrap;       
+    align-items: center; /* centra verticalmente */
+    justify-content: center; /* centra horizontalmente */
+    position: absolute;
+    top:300px;
+    left: 600px;
+}
+#Pruev .img-pruev{
+    background-color: red;
+    height: 600px;
+
+}
+#Pruev .img-pruev .position{
+    
+    position: relative;  /* o absolute, según el caso */
+    top: 20px;           /* mueve hacia abajo */
+    left: 100px;         /* mueve hacia la derecha */
+    height: 560px;       /* Altura */
+    width: 1500px;       /* ancho */
+    
+}
+.Categorias{
+    display: flex;
+    flex-wrap: wrap;
+}
+.categoria{
+    border: 1px solid #ccc;
+    padding: 10px;
+    width: 33%;
 }
