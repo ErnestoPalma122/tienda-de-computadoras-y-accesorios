@@ -1,6 +1,6 @@
 header{
     background-color: black;
-    padding: 20px;
+    padding: 10px;
 }
 nav a{
     color: white;
@@ -11,5 +11,27 @@ nav a{
 nav a:hover{
     background-color:gray ;
     color: black;
-    border-radius: 20px;
+    border-radius: 30px;
+}
+/* app.component.css (o el CSS correspondiente al componente) */
+.boton-imagen {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  position: relative;
+  left: 1100px;         /* mueve hacia la derecha */
+  
+}
+
+.boton-imagen img {
+  width: 35px;
+  height: 35px;
+  border-radius: 4px;
+}
+
+/* Efecto al pasar el mouse */
+.boton-imagen:hover {
+  transform: scale(1.1);
 }
