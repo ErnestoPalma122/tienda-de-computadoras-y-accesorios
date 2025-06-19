@@ -52,3 +52,19 @@
     padding: 10px;
     width: 33%;
 }
+
+.titulo-boton {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #797a7c;
+  color: white;
+  text-decoration: none;
+  font-size: 24px; /* tamaño tipo título */
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.titulo-boton:hover {
+  background-color: #797a7c;
+}

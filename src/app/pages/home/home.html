@@ -13,7 +13,11 @@
     @for (Categorias of Categorias; track Categorias.id) {
         <article class="categoria">
             <img [src]="Categorias.imagen" [alt]="Categorias.categoria">
-            <h3>{{Categorias.categoria}}</h3>
+            <a routerLink="/catego-c" class="titulo-boton">
+                {{Categorias.categoria}}
+            </a>
+    
+            
         </article>
     }
 </section>
