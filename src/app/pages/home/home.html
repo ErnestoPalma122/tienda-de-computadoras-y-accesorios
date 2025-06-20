@@ -9,8 +9,11 @@
     </div>
     
 </Section>
-<section class="Categorias">
-    @for (Categorias of Categorias; track Categorias.id) {
+
+<section class="Categoria">
+    <h1 class="Titulo2">Categorias</h1>
+    <div class="Categorias">
+        @for (Categorias of Categorias; track Categorias.id) {
         <article class="categoria">
             <img [src]="Categorias.imagen" [alt]="Categorias.categoria">
             <a routerLink="/catego-c" class="titulo-boton">
@@ -20,5 +23,7 @@
             
         </article>
     }
+    </div>
+    
 </section>
 

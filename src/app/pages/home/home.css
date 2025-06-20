@@ -43,15 +43,26 @@
     
 }
 
+.Titulo2{
+    text-align: center;
+    font-size: 39px;
+    
+}
+.categoria{
+    background-color: #5b8df0;
+}
+
 .Categorias{
     display: flex;
     flex-wrap: wrap;
+    align-items: center;
 }
 .categoria{
     border: 1px solid #ccc;
     padding: 10px;
-    width: 33%;
+    width: 33.3%;
 }
+
 
 .titulo-boton {
   display: inline-block;
@@ -63,6 +74,7 @@
   font-weight: bold;
   border-radius: 5px;
   cursor: pointer;
+  
 }
 
 .titulo-boton:hover {

@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
 import { categori, Category } from '../../services/category';
-
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-home',
-  imports: [],
+  imports: [RouterModule],
   templateUrl: './home.html',
   styleUrl: './home.css'
 })
