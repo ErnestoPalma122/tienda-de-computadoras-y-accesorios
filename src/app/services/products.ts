@@ -1,7 +1,34 @@
+/*import { Injectable } from '@angular/core';*/
+
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+
+export interface product {
+  id: number;
+  nombre: string;
+  descripcion: string;
+  categoria:string;
+  precio: number;
+  imagen: string;
+
+}
+
+@Injectable({
+  providedIn: 'root'
+})
+export class ProductsService {
+  private apiUrl = 'http://localhost:3000/api/products';
+
+  constructor(private http: HttpClient) {}
+
+  getProducts(): Observable<product[]> {
+    return this.http.get<product[]>(this.apiUrl);
+  }
+}
 
 
-export interface product{
+/*export interface product{
   id:number;
   nombre: string;
   descripcion:string;
@@ -46,4 +73,4 @@ export class Products {
   getProducts():product[]{
     return this.products
   }
-}
+}*/
