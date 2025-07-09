@@ -1,1 +1,14 @@
-<p>catego-c works!</p>
+<section class="productos">
+  <!-- Si no hay productos, muestra mensaje -->
+  
+
+  <!-- Lista de productos -->
+   @for (producto of productos; track producto.id) {
+    <article class="producto">
+      <img [src]="producto.imagen" [alt]="producto.nombre">
+      <h3>{{ producto.nombre }}</h3>
+      <strong>{{ producto.precio| currency:'USD'  }}</strong>
+    </article>
+  }
+</section>
+

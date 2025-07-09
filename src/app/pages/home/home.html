@@ -16,7 +16,7 @@
         @for (Categorias of Categorias; track Categorias.id) {
         <article class="categoria">
             <img [src]="Categorias.imagen" [alt]="Categorias.categoria">
-            <a routerLink="/catego-c" class="titulo-boton">
+            <a routerLink="/catego-c" [queryParams]="{categoria: Categorias.categoria}" class="titulo-boton">
                 {{Categorias.categoria}}
             </a>
     
