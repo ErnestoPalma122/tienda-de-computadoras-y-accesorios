@@ -13,13 +13,14 @@
     
 </Section>
 
-<section class="productos">
+<section class="productos" routerLink="/infoprod">
     @for(producto of productos; track producto.id){
         <article class="producto">
             <img [src]="producto.imagen" [alt]="producto.imagen">
             <h3>{{producto.nombre}}</h3>
             
             <strong>{{producto.precio | currency:'USD' }}</strong>
+            
         </article>
 
     }

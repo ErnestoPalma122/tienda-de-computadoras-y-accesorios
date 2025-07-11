@@ -4,9 +4,16 @@
         <a routerLink="/nosotros">Nosotros</a>
         <a routerLink="/productos">Productos</a>
         <a routerLink="/contacto">Contacto</a>
-        <button class="boton-imagen" [routerLink]="['/login']">
-            <img src="img/login.png" alt="Ir a destino">
+        <!-- Si está logueado, muestra botón de cerrar sesión -->
+        <button class="boton-imagen" *ngIf="auth.isLoggedIn()" (click)="logout()" title="Cerrar sesión">
+            <img src="img/logout.png" alt="Cerrar sesión">
         </button>
+
+        <!-- Si NO está logueado, muestra botón de login -->
+        <button class="boton-imagen" *ngIf="!auth.isLoggedIn()" [routerLink]="['/login']" title="Iniciar sesión">
+            <img src="img/login.png" alt="Ir a login">
+        </button>
+
 
     </nav>
 </header>
