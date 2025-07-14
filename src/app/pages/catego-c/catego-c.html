@@ -4,7 +4,7 @@
 
   <!-- Lista de productos -->
    @for (producto of productos; track producto.id) {
-    <article class="producto">
+    <article class="producto"[routerLink]="['/infoprod', producto.id]">
       <img [src]="producto.imagen" [alt]="producto.nombre">
       <h3>{{ producto.nombre }}</h3>
       <strong>{{ producto.precio| currency:'USD'  }}</strong>

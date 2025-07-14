@@ -1,1 +1,10 @@
-<p>infoprod works!</p>
+<section class="producto-container" *ngIf="producto">
+  <img class="producto-imagen" [src]="producto.imagen" [alt]="producto.nombre">
+
+  <div class="producto-info">
+    <h2 class="producto-titulo">{{ producto.nombre }}</h2>
+    <p class="producto-descripcion">{{ producto.descripcion }}</p>
+    <strong>{{ producto.precio| currency:'USD'  }}</strong>
+    <button class="btn-carrito">Añadir al carrito</button>
+  </div>
+</section>
