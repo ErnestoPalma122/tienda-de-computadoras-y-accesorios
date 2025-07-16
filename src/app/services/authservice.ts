@@ -5,16 +5,20 @@ import { Injectable } from '@angular/core';
 })
 export class Authservice {
   isLoggedIn(): boolean {
-    // Verifica que esté en el navegador
-    if (typeof window !== 'undefined' && typeof localStorage !== 'undefined') {
-      return !!localStorage.getItem('token');
-    }
-    return false;
+    return typeof window !== 'undefined' && !!localStorage.getItem('token');
   }
 
   logout(): void {
-    if (typeof window !== 'undefined' && typeof localStorage !== 'undefined') {
-      localStorage.removeItem('token');
-    }
+    localStorage.removeItem('token');
+    localStorage.removeItem('usuario'); // Limpia también el ID
+  }
+
+  getUserId(): number | null {
+    const id = localStorage.getItem('usuario');
+    return id ? Number(id) : null;
+  }
+
+  getToken(): string | null {
+    return localStorage.getItem('token');
   }
 }

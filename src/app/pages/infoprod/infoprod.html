@@ -5,6 +5,6 @@
     <h2 class="producto-titulo">{{ producto.nombre }}</h2>
     <p class="producto-descripcion">{{ producto.descripcion }}</p>
     <strong>{{ producto.precio| currency:'USD'  }}</strong>
-    <button class="btn-carrito">Añadir al carrito</button>
+    <button class="btn-carrito" (click)="addToCart()">Añadir al carrito</button>
   </div>
 </section>

@@ -17,13 +17,14 @@ export class Login {
 
   constructor(private http: HttpClient, private router: Router) {}
 
-  login() {
-    this.http.post<any>('http://localhost:3000/api/auth/login', {
-      correo: this.correo,
-      contraseña: this.contrasena
+ login() {
+  this.http.post<any>('http://localhost:3000/api/auth/login', {
+    correo: this.correo,
+    contraseña: this.contrasena
     }).subscribe({
       next: res => {
         localStorage.setItem('token', res.token);
+        localStorage.setItem('usuarioId', res.usuario.id.toString()); // <-- Guardar el ID
         alert('Inicio de sesión exitoso');
         this.router.navigate(['/home']); // redirige después de login
       },

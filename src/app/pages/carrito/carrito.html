@@ -1,0 +1,30 @@
+  <h2 class="carrito-titulo">Carrito de compras</h2>
+
+<div class="carrito-container">
+  <div class="carrito-item" *ngFor="let item of items">
+    <img [src]="item.imagen" [alt]="item.nombre" class="carrito-img" />
+
+    <div class="carrito-info">
+      <h3>{{ item.nombre }}</h3>
+      <p class="precio">{{ item.precio | currency:'USD' }}</p>
+      <button (click)="removeItem(item.id)" class="btn-eliminar">Eliminar</button>
+    </div>
+  </div>
+
+  <!-- Mostrar acciones y total solo si hay productos -->
+  <div *ngIf="items.length > 0">
+    <div class="carrito-acciones">
+      <button (click)="clearCart()" class="btn-vaciar">Vaciar carrito</button>
+    </div>
+
+    <div class="carrito-total">
+      <h3>Total: {{ getTotal() | currency:'USD' }}</h3>
+      <button class="btn-comprar" (click)="finalizarCompra()">Finalizar compra</button>
+    </div>
+  </div>
+
+  <!-- Si el carrito está vacío -->
+  <div class="carrito-vacio" *ngIf="items.length === 0">
+    <p>El carrito está vacío.</p>
+  </div>
+</div>
