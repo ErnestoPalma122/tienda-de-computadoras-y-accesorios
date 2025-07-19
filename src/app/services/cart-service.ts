@@ -37,20 +37,22 @@ export class CartService {
     this.saveCart();
   }
   guardarCompra(usuarioId: number): Observable<any> {
-  const items = this.items.map(p => ({
-    id: p.id,
-    cantidad: 1,
-    precio: p.precio
-  }));
+    const items = this.items.map(p => ({
+      id: p.id,
+      cantidad: 1,
+      precio: Number(p.precio) // aseguramos que es numérico
+    }));
 
-  const total = this.items.reduce((sum, p) => sum + p.precio, 0);
+    const total = Number(
+      this.items.reduce((sum, p) => sum + Number(p.precio), 0).toFixed(2)
+    );
 
-  return this.http.post('http://localhost:3000/api/compras', {
-    usuarioId,
-    items,
-    total
-  });
-}
+    return this.http.post('http://localhost:3000/api/compras', {
+      usuarioId,
+      items,
+      total
+    });
+  } 
 
 
 }

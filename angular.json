@@ -11,54 +11,43 @@
       "prefix": "app",
       "architect": {
         "build": {
-          "builder": "@angular/build:application",
+          "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "browser": "src/main.ts",
-            "polyfills": [
-              "zone.js"
-            ],
-            "tsConfig": "tsconfig.app.json",
-            "assets": [
-              {
-                "glob": "**/*",
-                "input": "public"
-              }
-            ],
-            "styles": [
-              "src/styles.css"
-            ],
-            "server": "src/main.server.ts",
-            "outputMode": "server",
-            "ssr": {
-              "entry": "src/server.ts"
-            }
+          "outputPath": "dist/tienda-de-computadoras-y-accesorios",
+          "index": "src/index.html",
+          "main": "src/main.ts",
+          "polyfills": ["zone.js"],
+          "tsConfig": "tsconfig.app.json",
+          "assets": [
+            "src/favicon.ico",
+            "src/assets"
+          ],
+          "styles": [
+            "src/styles.css"
+          ],
+          "scripts": []
           },
           "configurations": {
             "production": {
-              "budgets": [
-                {
-                  "type": "initial",
-                  "maximumWarning": "500kB",
-                  "maximumError": "1MB"
-                },
-                {
-                  "type": "anyComponentStyle",
-                  "maximumWarning": "4kB",
-                  "maximumError": "8kB"
-                }
-              ],
-              "outputHashing": "all"
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractLicenses": true
             },
+
             "development": {
+              "buildOptimizer": false,
               "optimization": false,
-              "extractLicenses": false,
-              "sourceMap": true
+              "vendorChunk": true,
+             "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
             }
           },
           "defaultConfiguration": "production"
         },
         "serve": {
-          "builder": "@angular/build:dev-server",
+          "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
               "buildTarget": "tienda-de-computadoras-y-accesorios:build:production"
