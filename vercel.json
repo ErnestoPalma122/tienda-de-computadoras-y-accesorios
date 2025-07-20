@@ -1,14 +1,17 @@
 {
+  "version": 2,
   "builds": [
     {
-      "src": "dist/tienda-de-computadoras-y-accesorios/**",
-      "use": "@vercel/static"
+      "src": "angular.json",
+      "use": "@vercel/static-build",
+      "config": { "distDir": "dist/tienda-de-computadoras-y-accesorios" }
     }
   ],
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "dist/tienda-de-computadoras-y-accesorios/$1"
+      "dest": "/index.html"
     }
   ]
 }
+
