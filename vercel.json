@@ -1,0 +1,14 @@
+{
+  "builds": [
+    {
+      "src": "dist/tienda-de-computadoras-y-accesorios/**",
+      "use": "@vercel/static"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "dist/tienda-de-computadoras-y-accesorios/$1"
+    }
+  ]
+}
