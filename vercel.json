@@ -11,9 +11,8 @@
   ],
   "routes": [
     {
-      "src": "/(.*)",
+      "src": "/(?:(?!.*\\.(?:js|css|map|json|svg|png|jpg|jpeg|ico)).*)",
       "dest": "/index.html"
     }
   ]
 }
-
