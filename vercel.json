@@ -11,7 +11,11 @@
   ],
   "routes": [
     {
-      "src": "/(?:(?!.*\\.(?:js|css|map|json|svg|png|jpg|jpeg|ico)).*)",
+      "src": "/(.*\\.(js|css|png|jpg|jpeg|gif|svg|ico|json|woff|woff2|ttf|map))",
+      "continue": true
+    },
+    {
+      "src": "/(.*)",
       "dest": "/index.html"
     }
   ]
