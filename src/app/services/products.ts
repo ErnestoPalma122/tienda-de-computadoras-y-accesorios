@@ -3,6 +3,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { environment } from '../../environments/environment';
 
 export interface product {
   id: number;
@@ -18,7 +19,7 @@ export interface product {
   providedIn: 'root'
 })
 export class ProductsService {
-  private apiUrl = 'http://localhost:3000/api/products';
+  private apiUrl = `${environment.apiUrl}/products`;
 
   constructor(private http: HttpClient) {}
 
@@ -29,7 +30,7 @@ export class ProductsService {
   return this.http.get<product>(`${this.apiUrl}/${id}`);
 }
   getProductsByCategory(categoria: string): Observable<product[]> {
-  return this.http.get<product[]>(`http://localhost:3000/api/products/categoria/${categoria}`);
+  return this.http.get<product[]>(`${this.apiUrl}/categoria/${categoria}`);
   }
 }
 
