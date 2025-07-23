@@ -9,13 +9,31 @@ import { Observable } from 'rxjs';
 })
 export class CartService {
   private items: product[] = [];
+  private usuarioId: number | null = null;
+
   constructor(private http: HttpClient) {
-    const savedCart = localStorage.getItem('cart');
+    this.usuarioId = Number(localStorage.getItem('usuarioId'));
+    this.loadCart();
+  }
+
+  private getStorageKey(): string {
+    return this.usuarioId ? `cart_${this.usuarioId}` : 'cart';
+  }
+
+  private loadCart() {
+    const savedCart = localStorage.getItem(this.getStorageKey());
     this.items = savedCart ? JSON.parse(savedCart) : [];
   }
 
   private saveCart() {
-    localStorage.setItem('cart', JSON.stringify(this.items));
+    if (this.usuarioId !== null) {
+      localStorage.setItem(this.getStorageKey(), JSON.stringify(this.items));
+    }
+  }
+
+  setUsuarioId(id: number) {
+    this.usuarioId = id;
+    this.loadCart();
   }
 
   addToCart(product: product) {
@@ -29,18 +47,19 @@ export class CartService {
 
   clearCart() {
     this.items = [];
-    localStorage.removeItem('cart');
+    localStorage.removeItem(this.getStorageKey());
   }
 
   removeItem(id: number) {
     this.items = this.items.filter(item => item.id !== id);
     this.saveCart();
   }
+
   guardarCompra(usuarioId: number): Observable<any> {
     const items = this.items.map(p => ({
       id: p.id,
       cantidad: 1,
-      precio: Number(p.precio) // aseguramos que es numérico
+      precio: Number(p.precio)
     }));
 
     const total = Number(
@@ -52,7 +71,6 @@ export class CartService {
       items,
       total
     });
-  } 
-
-
+  }
 }
+

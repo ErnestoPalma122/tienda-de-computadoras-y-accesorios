@@ -15,6 +15,8 @@ export class Carrito {
   items: product[];
 
   constructor(private cartService: CartService) {
+    const usuarioId = Number(localStorage.getItem('usuarioId'));
+    this.cartService.setUsuarioId(usuarioId);
     this.items = this.cartService.getItems();
   }
 

@@ -10,11 +10,11 @@ export class Authservice {
 
   logout(): void {
     localStorage.removeItem('token');
-    localStorage.removeItem('usuario'); // Limpia también el ID
+    localStorage.removeItem('usuarioId'); // Limpia también el ID
   }
 
   getUserId(): number | null {
-    const id = localStorage.getItem('usuario');
+    const id = localStorage.getItem('usuarioId');
     return id ? Number(id) : null;
   }
 
