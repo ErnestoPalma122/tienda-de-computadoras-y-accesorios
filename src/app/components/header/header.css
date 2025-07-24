@@ -13,6 +13,20 @@ nav a:hover{
     color: black;
     border-radius: 30px;
 }
+.boton-imagen-Car{
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: transform 0.4s ease;
+  position: relative;
+  left: 1050px;         /* mueve hacia la derecha */
+}
+.boton-imagen-Car img {
+  width: 30px;
+  height: 30px;
+  border-radius: 4px;
+}
 /* app.component.css (o el CSS correspondiente al componente) */
 .boton-imagen {
   background: none;

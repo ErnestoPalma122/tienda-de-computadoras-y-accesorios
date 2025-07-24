@@ -4,6 +4,12 @@
         <a routerLink="/nosotros">Nosotros</a>
         <a routerLink="/productos">Productos</a>
         <a routerLink="/contacto">Contacto</a>
+
+        <button class="boton-imagen-Car" routerLink="/carrito" title="Ver carrito">
+        <img src="/img/carrito.png" alt="Carrito">
+        </button>
+
+
         <!-- Si está logueado, muestra botón de cerrar sesión -->
         <button class="boton-imagen" *ngIf="auth.isLoggedIn()" (click)="logout()" title="Cerrar sesión">
             <img src="img/logout.png" alt="Cerrar sesión">
